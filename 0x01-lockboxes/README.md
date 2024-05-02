@@ -6,11 +6,14 @@
 
 ## Function Prototype
 
-```python
+```
+python
 def canUnlockAll(boxes)
 
 -    boxes: A list of lists representing the locked boxes.
 -    Returns True if all boxes can be opened, otherwise False.
+
+```
 
 ## Requirements
 
@@ -30,5 +33,6 @@ def canUnlockAll(boxes)
 
 ## Running the Code
 
+```
 ./main_0.py
-```'
+```
