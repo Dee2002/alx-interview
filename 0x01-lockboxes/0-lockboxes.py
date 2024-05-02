@@ -19,7 +19,7 @@ def canUnlockAll(boxes):
     while stack:
         current_box = stack.pop()
         for key in boxes[current_box]:
-            if key < len(boxes) and not visited[key]:
+            if 0 <= key < len(boxes) and not visited[key]:
                 visited[key] = True
                 stack.append(key)
 
