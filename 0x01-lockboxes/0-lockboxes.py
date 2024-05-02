@@ -10,18 +10,18 @@ def canUnlockAll(boxes):
     Returns:
         bool: True if all boxes can be opened, otherwise False.
     """
-    # Initialize a list to keep track of visited boxes
-    visited = [False] * len(boxes)
+    num_boxes = len(boxes)
+    visited = [False] * num_boxes
     visited[0] = True  # Mark the first box as visited
-    stack = [0]  # Initialize a stack with the index of the first box
+    queue = [0]  # Initialize a queue with the index of the first box
 
-    # DFS to traverse through the boxes and keys
-    while stack:
-        current_box = stack.pop()
+    # BFS to traverse through the boxes and keys
+    while queue:
+        current_box = queue.pop(0)
         for key in boxes[current_box]:
-            if 0 <= key < len(boxes) and not visited[key]:
+            if key < num_boxes and not visited[key]:
                 visited[key] = True
-                stack.append(key)
+                queue.append(key)
 
     # Check if all boxes are visited
     return all(visited)
