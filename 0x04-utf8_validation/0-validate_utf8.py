@@ -3,6 +3,7 @@
 Function to validate UTF-8 encoding
 """
 
+
 def validUTF8(data):
     num_bytes = 0
 
