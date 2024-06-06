@@ -28,7 +28,7 @@ request(apiUrl, (error, response, body) => {
           if (error) {
             reject(error);
           } else if (response.statusCode !== 200) {
-            reject(`Unexpected status code: ${response.statusCode}`);
+            reject(new Error(`Unexpected status code: ${response.statusCode}`));
           } else {
             resolve(JSON.parse(body).name);
           }
@@ -41,6 +41,6 @@ request(apiUrl, (error, response, body) => {
       .then(characters => {
         characters.forEach(character => console.log(character));
       })
-      .catch(error => console.error('Error:', error));
+      .catch(error => console.error('Error:', error.message)); // Output only the error message
   }
 });
