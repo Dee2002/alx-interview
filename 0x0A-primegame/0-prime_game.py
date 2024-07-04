@@ -38,7 +38,7 @@ def simulate_game(n, primes):
         turn = 1 - turn  # Switch turns
 
 
-def is_winner(x, nums):
+def isWinner(x, nums):
     """Determines the overall winner after x rounds"""
     if not nums or x < 1:
         return None
