@@ -40,6 +40,9 @@ def simulate_game(n, primes):
 
 def is_winner(x, nums):
     """Determines the overall winner after x rounds"""
+    if not nums or x < 1:
+        return None
+
     max_n = max(nums)
     primes = sieve(max_n)
     maria_wins = 0
@@ -57,4 +60,4 @@ def is_winner(x, nums):
     elif ben_wins > maria_wins:
         return "Ben"
     else:
-        return None  # Nobody wins
+        return None
